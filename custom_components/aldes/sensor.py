@@ -203,7 +203,7 @@ async def async_setup_entry(
 
     entities: list[AldesSensorEntity] = []
     for product in coordinator.data:
-        if product["reference"] == "EASY_HOME_CONNECT":
+        if product["reference"] in ["EASY_HOME_CONNECT", "EASY_HOME_PREMIUM"]:
             sensors = EASY_HOME_SENSORS
         elif product["reference"] == "TONE_AIR":
             sensors = TONE_AIR_SENSORS
